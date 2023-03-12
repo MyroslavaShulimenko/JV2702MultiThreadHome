@@ -9,6 +9,7 @@ public class Home2702 {
         start = System.currentTimeMillis();
         countDivisibilityParallel();
         System.out.println("Time elapsed: " + (System.currentTimeMillis() - start));
+        System.out.println(Runtime.getRuntime().availableProcessors());// выдает колличество процессов, кот можно одновременно запустить
     }
 
     private static void countDivisibilityParallel() {
