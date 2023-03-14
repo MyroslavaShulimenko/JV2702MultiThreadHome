@@ -11,9 +11,12 @@ static ReentrantLock lock=new ReentrantLock();
         // When the arrows end, the wait() method is called and releases.
         synchronized public void fire() {
             lock.lock();
+            try {
+
+
             System.out.println("Count arrows = ");
-            Scanner scanner=new Scanner(System.in);
-            arrows= scanner.nextInt();
+            Scanner scanner = new Scanner(System.in);
+            arrows = scanner.nextInt();
             for (int idx = arrows; idx >= 0; idx--) {
 
                 if (idx != 0) {
@@ -35,7 +38,10 @@ static ReentrantLock lock=new ReentrantLock();
                     e.printStackTrace();
                 }
             }
-            lock.unlock();
+        }finally {
+                lock.unlock();
+            }
+
         }
 
         // reload() brings new arrows, calls the notify() method, which awakens the thread
