@@ -1,7 +1,5 @@
 package lesson0603;
 
-import lesson0103.BankAccount;
-
 public class StateAsObjectRaceAccount {
    static class BankAccount{
         int a=1000;
