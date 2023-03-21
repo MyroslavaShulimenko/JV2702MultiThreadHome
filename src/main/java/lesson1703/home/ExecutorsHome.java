@@ -29,6 +29,7 @@ public class ExecutorsHome {
 
     public static void main(String[] args) throws Exception {
         Integer totalSum = 0;
+        while (true){
            ExecutorService houses = Executors.newFixedThreadPool(4); // Executors.newFixedThreadPool(10) если по кол-ву домов
           // ExecutorService houses =Executors.newSingleThreadExecutor() ;  - одна бригада
 
@@ -41,5 +42,5 @@ public class ExecutorsHome {
         }
         houses.shutdown();
         System.out.println(" Final price of houses " + 10 + " building is: " + totalSum);
-    }
+    }}
 }
